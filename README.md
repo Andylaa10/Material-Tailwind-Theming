@@ -8,6 +8,6 @@ Links that i have used to setup this project
 ### Eslint + Prettier
 1. https://blog.bitsrc.io/how-ive-set-up-eslint-and-prettier-in-angular-16-and-why-i-did-that-4bfc304284a6
 ### Eslint setup remove unused imports
-2 https://www.npmjs.com/package/eslint-plugin-unused-imports
+2. https://www.npmjs.com/package/eslint-plugin-unused-imports
 ### Angular Material + TailWindCSS setup  
 3. https://www.youtube.com/watch?v=sugHzagGLU4   
