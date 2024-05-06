@@ -1,0 +1,52 @@
+@use "styles/variables";
+
+@use '@angular/material' as mat;
+
+@use 'styles/palettes' as palette;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@include mat.core();
+
+$material-tailwind-primary: mat.define-palette(palette.$primary-pat);
+$material-tailwind-accent: mat.define-palette(palette.$accent-pat, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$material-tailwind-warn: mat.define-palette(palette.$warn-pat);
+$material-tailwind-typography: mat.define-typography-config(
+  $font-family: theme("fontFamily.mono")
+);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$material-tailwind-theme: mat.define-light-theme((
+  color: (
+    primary: $material-tailwind-primary,
+    accent: $material-tailwind-accent,
+    warn: $material-tailwind-warn,
+  ),
+  typography: $material-tailwind-typography
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($material-tailwind-theme);
+@include mat.all-component-typographies($material-tailwind-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  @apply transition-colors duration-500;
+}
+
+html, body {
+  @apply h-full;
+}
+
+body {
+  @apply m-0;
+  @apply font-sans;
+}
