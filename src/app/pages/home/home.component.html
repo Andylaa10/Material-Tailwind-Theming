@@ -1,0 +1,43 @@
+<div class="bg-white dark:bg-slate-900 w-full h-full">
+  <div class="w-full flex justify-center items-center flex-col">
+    <h1 class="dark:!text-white">Change theme</h1>
+    <div class="flex justify-center items-center">
+      <mat-icon color="primary">brightness_5</mat-icon>
+      <mat-slide-toggle
+        #toggle
+        (change)="changeTheme($event)"></mat-slide-toggle>
+      <mat-icon color="primary">bedtime</mat-icon>
+    </div>
+  </div>
+
+  <button mat-flat-button color="primary" class="m-2">Material Button</button>
+  <button class="px-4 py-2 rounded bg-primary-500 m-2" mat-ripple>
+    Tailwind Button
+  </button>
+  <h1 class="text-accent-400">Tailwind header</h1>
+
+  <div class="h-32 w-full flex justify-center items-center bg-accent-400">
+    <p class="hover:text-blue-400 hover:bg-accent-900">Hover over me</p>
+  </div>
+
+  <table
+    mat-table
+    class="bg-white dark:!bg-slate-900 dark:!text-white"
+    [dataSource]="dataSource">
+    @for (header of displayedColumns; track $index) {
+      <ng-container [matColumnDef]="header">
+        <th mat-header-cell *matHeaderCellDef>{{ header }}</th>
+        <td mat-cell *matCellDef="let element">{{ element[header] }}</td>
+      </ng-container>
+    }
+
+    <tr
+      mat-header-row
+      *matHeaderRowDef="displayedColumns"
+      class="dark:!text-white"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: displayedColumns"
+      class="dark:!text-white"></tr>
+  </table>
+</div>
