@@ -21,15 +21,12 @@ jobs:
 
       - name: download dependencies
         run: npm install
-        working-directory: ./Material-Tailwind-Theming
 
       - name: eslint check
         run:  npm run-script ng lint
-        working-directory: ./Material-Tailwind-Theming
 
       - name: prettier check
         run:  npm run-script npx prettier --write .
-        working-directory: ./Material-Tailwind-Theming
 
       - name: build frontend
         run: npm run build
