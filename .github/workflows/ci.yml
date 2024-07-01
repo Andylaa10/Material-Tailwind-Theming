@@ -1,0 +1,32 @@
+name: Angular-pipeline
+
+on:
+  pull_request:
+    branches: ['main', 'development']
+
+jobs:
+  validate-frontend:
+    name: validate-frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the source code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: download dependencies
+        run: npm install
+
+      - name: eslint check
+        run: npm run-script ng lint
+
+      - name: prettier check
+        run: npm run prettier --write .
+
+      - name: build frontend
+        run: npm run build
