@@ -1,6 +1,6 @@
-<div class="bg-white dark:bg-slate-900 w-full h-full">
+<div class="bg-white dark:bg-slate-900 w-full min-h-full">
   <div class="w-full flex justify-center items-center flex-col">
-    <h1 class="dark:!text-white">Change theme</h1>
+    <h1 class="dark:text-white">Change theme</h1>
     <div class="flex justify-center items-center">
       <mat-icon color="primary">brightness_5</mat-icon>
       <mat-slide-toggle
@@ -22,7 +22,7 @@
 
   <table
     mat-table
-    class="bg-white dark:!bg-slate-900 dark:!text-white"
+    class="bg-white dark:!bg-slate-900 dark:text-white"
     [dataSource]="dataSource">
     @for (header of displayedColumns; track $index) {
       <ng-container [matColumnDef]="header">
