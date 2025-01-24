@@ -42,27 +42,26 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    MatButton,
-    MatCell,
-    MatCellDef,
-    MatHeaderCell,
-    MatHeaderRow,
-    MatHeaderRowDef,
-    MatIcon,
-    MatRipple,
-    MatRow,
-    MatRowDef,
-    MatSlideToggle,
-    MatTable,
-    MatColumnDef,
-    MatHeaderCellDef,
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-home',
+    imports: [
+        MatButton,
+        MatCell,
+        MatCellDef,
+        MatHeaderCell,
+        MatHeaderRow,
+        MatHeaderRowDef,
+        MatIcon,
+        MatRipple,
+        MatRow,
+        MatRowDef,
+        MatSlideToggle,
+        MatTable,
+        MatColumnDef,
+        MatHeaderCellDef,
+    ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
